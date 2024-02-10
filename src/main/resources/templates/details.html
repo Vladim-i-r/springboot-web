@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org"> <!-- Se agrega esto para poder usar thymeleaf-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>  <!-- th:text=${variable}  esta es la manera de llamar al mapeo-->
+</head>
+<body>
+    <h1 th:text="${title}"></h1>
+    <ul>
+        <li th:text="${user.name}"></li>   <!-- No esta accediendo directamente a la clase, si no al metodo getName y getLastname implicitamente aunque sean private-->
+        <li th:text="${user.lastname}"></li>
+        <li th:if="${user.email}" th:text="${user.email}"></li> <!-- Por defecto evalua si es nulo "!= null" en la condicion po rlo ques epuede omitir-->
+        <li th:if="${user.email == null}" th:text="${'No tiene email'}"></li> 
+ <!--   <li th:text="${name}"></li> 
+        <li th:text="${lastname}"></li>-->
+    </ul>
+
+    
+</body>
+</html>
