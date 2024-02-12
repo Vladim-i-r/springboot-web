@@ -16,6 +16,15 @@
         <li th:text="${lastname}"></li>-->
     </ul>
 
+    <a th:href="@{/list}">Ver listado</a><br>
+    <a th:href="@{/api/params/foo?message=Hola como estan}">Ver mensaje inyectado en foo</a><br>
+    <a th:href="@{'/api/params/foo?message='+ ${title}}">Ver mensaje concatenado en foo</a><br>   <!-- CONCATENANDO CON VARIABLE-->
+    <a th:href="@{/api/params/foo(message='Esta es otra manera')}">Ver mensaje inyectado 2 foo</a><br>   <!-- Entre parentesis-->
+    <a th:href="@{/api/params/bar(text='Con 2 parametros', code=988)}">Ver mensaje inyectado en bar</a><br>   <!-- Con dos parametros-->
+    <a th:href="@{/api/var/baz/Algun mensaje}">Ver mensaje path variable</a><br>   <!-- con path variable-->
+    <a th:href="@{'/api/var/baz/' + ${title}}">Ver mensaje path variable con variable</a><br>   <!-- Path variable con variable-->
+    <a th:href="@{'/api/var/baz/' + 'Aprendiendo con thymeleaf'}">Ver mensaje path variable con string</a><br>   <!-- Path variable con variable-->
+
     
 </body>
 </html>
